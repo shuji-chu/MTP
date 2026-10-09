@@ -1,57 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="24dp"
-    android:background="#F5F6F8">
+    android:background="#F5F6F8"
+    android:fillViewport="true">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="YS"
-        android:textSize="32sp"
-        android:textStyle="bold"
-        android:textColor="#1A1A1A"
-        android:layout_marginTop="40dp"/>
+        android:orientation="vertical"
+        android:padding="16dp">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="MTP Proxy"
-        android:textSize="14sp"
-        android:textColor="#666666"
-        android:layout_marginTop="4dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="YS"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="#1A1A1A"
+            android:layout_marginTop="16dp"/>
 
-    <EditText
-        android:id="@+id/inputLink"
-        android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:layout_marginTop="32dp"
-        android:background="#FFFFFF"
-        android:padding="16dp"
-        android:gravity="top"
-        android:hint="粘贴 MTP 链接 tg://proxy?..."
-        android:textSize="13sp"
-        android:inputType="textMultiLine"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MTP Proxy"
+            android:textSize="13sp"
+            android:textColor="#666666"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="24dp"/>
 
-    <Button
-        android:id="@+id/btnConnect"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_marginTop="24dp"
-        android:text="连接"
-        android:textSize="16sp"
-        android:textColor="#FFFFFF"
-        android:backgroundTint="#3B5BA9"/>
+        <LinearLayout
+            android:id="@+id/statusCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="#FFFFFF"
+            android:padding="20dp"
+            android:layout_marginBottom="12dp">
 
-    <TextView
-        android:id="@+id/tvStatus"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="未连接"
-        android:textSize="14sp"
-        android:gravity="center"
-        android:textColor="#888888"/>
-</LinearLayout>
+            <ImageView
+                android:id="@+id/statusIcon"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@android:drawable/ic_menu_close_clear_cancel"
+                android:layout_marginEnd="16dp"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/statusText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="已停止"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:textColor="#1A1A1A"/>
+
+                <TextView
+                    android:id="@+id/statusSub"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="点此启动"
+                    android:textSize="12sp"
+                    android:textColor="#666666"
+                    android:layout_marginTop="2dp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#FFFFFF"
+            android:padding="16dp"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MTP 链接"
+                android:textSize="14sp"
+                android:textColor="#1A1A1A"
+                android:layout_marginBottom="8dp"/>
+
+            <EditText
+                android:id="@+id/inputLink"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="#F5F6F8"
+                android:padding="12dp"
+                android:gravity="top"
+                android:hint="粘贴 tg://proxy?..."
+                android:textSize="12sp"
+                android:textColorHint="#999999"
+                android:inputType="textMultiLine"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnConnect"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="连接"
+            android:textSize="15sp"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#2A4D8F"
+            android:layout_marginBottom="12dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#FFFFFF"
+            android:padding="16dp">
+
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="日志" android:textSize="15sp" android:textColor="#1A1A1A"
+                android:paddingTop="12dp" android:paddingBottom="12dp"/>
+
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#EEEEEE"/>
+
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="设置" android:textSize="15sp" android:textColor="#1A1A1A"
+                android:paddingTop="12dp" android:paddingBottom="12dp"/>
+
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#EEEEEE"/>
+
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="关于" android:textSize="15sp" android:textColor="#1A1A1A"
+                android:paddingTop="12dp" android:paddingBottom="12dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
