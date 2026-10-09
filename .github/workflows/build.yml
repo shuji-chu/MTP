@@ -14,10 +14,11 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
+      - uses: gradle/gradle-build-action@v3
+        with:
+          gradle-version: 8.2
       - name: Build APK
-        run: |
-          gradle wrapper --gradle-version 8.2
-          ./gradlew assembleDebug --no-daemon
+        run: gradle assembleDebug --no-daemon
       - uses: actions/upload-artifact@v4
         with:
           name: ys-apk
